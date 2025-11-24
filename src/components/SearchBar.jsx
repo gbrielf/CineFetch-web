@@ -23,9 +23,7 @@ function SearchBar({ onResultados }) {
           throw new Error('Dados inválidos');
       }
 
-      // 2. ADAPTAÇÃO: Sua API retorna UM objeto, mas a Home espera uma LISTA.
-      // Criamos uma lista contendo esse único filme para exibir na grade.
-      // Importante: Normalizamos o ID para 'imdbID' para a Home não se perder.
+      // A API retorna UM objeto, mas a Home espera uma LISTA.
       const filmeFormatado = {
           ...data,
           imdbID: data.imdbID || data.id // Garante que o ID esteja acessível
@@ -61,5 +59,6 @@ function SearchBar({ onResultados }) {
     </div>
   );
 }
+
 
 export default SearchBar;
